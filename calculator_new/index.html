@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1: Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display" id="display_1">
+                </div>
+                <div class="btn">
+                    <input type="button" value="AC" onclick="display.value = '' " class="operator">
+                    <input type="button" value="DE" onclick="display.value =  display.value.toString().slice(0,-1)" class="operator">
+                    <input type="button" value="*" onclick="display.value += '*' " class="operator">
+                    <input type="button" value="/" onclick="display.value += '/' " class="operator">
+                </div>
+                <div class="btn">
+                    <input type="button" value="sqrt" onclick="display.value = Math.sqrt(eval(display.value))" class="operator">
+                    <input type="button" value="^" onclick="display.value += '**'" class="operator">
+                    <input type="button" value="%" onclick="display.value += '/100'" class="operator">
+                    <input type="button" value="(" onclick="display.value += '(' " class="change">
+                </div>
+                <div class="btn">
+                    <input type="button" value="sin" onclick="display.value = Math.sin(eval(display.value))" class="operator">
+                    <input type="button" value="cos" onclick="display.value = Math.cos(eval(display.value))" class="operator">
+                    <input type="button" value="tan" onclick="display.value = Math.tan(eval(display.value))" class="operator">
+                    <input type="button" value=")" onclick="display.value += ')' " class="change">
+                </div>
+                <div class "btn">
+                    <input type="button" value="7" onclick="display.value += '7' " class="change">
+                    <input type="button" value="8" onclick="display.value += '8' " class="change">
+                    <input type="button" value="9" onclick="display.value += '9' " class="change">
+                    <input type="button" value="/" onclick="display.value += '/' " class="operator">
+                </div>
+                <div class="btn">
+                    <input type="button" value="4" onclick="display.value += '4' " class="change">
+                    <input type="button" value="5" onclick="display.value += '5' " class="change">
+                    <input type="button" value="6" onclick="display.value += '6' " class="change">
+                    <input type="button" value="-" onclick="handleSubtraction()" class="operator">
+                </div>
+                <div class="btn">
+                    <input type="button" value="1" onclick="display.value += '1' " class="change">
+                    <input type="button" value="2" onclick="display.value += '2' " class="change">
+                    <input type="button" value="3" onclick="display.value += '3' " class="change">
+                    <input type="button" value="+" onclick="display.value += '+' " class="operator">
+                </div>
+                <div class="btn">
+                    <input type="button" value="00" onclick="display.value += '00' " class="change">
+                    <input type="button" value="0" onclick="display.value += '0' " class="change">
+                    <input type="button" value="." onclick="display.value += '.' " class="change">
+                    <input type="button" value="=" onclick="display.value = eval(display.value)" class="equal operator">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById("display_1");
+
+        function handleSubtraction() {
+            const currentDisplay = display.value;
+            if (currentDisplay === '') {
+                // If the display is empty, add a minus sign to represent a negative number.
+                display.value = '-';
+            } else {
+                // If the display is not empty, append the subtraction operator.
+                display.value += '-';
+            }
+        }
+    </script>
+</body>
+</html>
