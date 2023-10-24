@@ -16,7 +16,7 @@
     text-align: right;
     flex: 3;
     font-size: 45px;
-    background: #334258;
+    background: #343940;
     font-weight: 400;
     color: #efefef;
     border-radius: 15px;
@@ -41,7 +41,7 @@ form input.equal{
     justify-content: center;
 }
 .calculator{
-    background: #334258;
+    background: #151a21;
     padding: 20px;
     border-radius: 10px;
 }
